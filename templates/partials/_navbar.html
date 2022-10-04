@@ -1,0 +1,17 @@
+{% load static %}
+<div class="search">
+  <div class="search_container">
+    <div class="search_msg">
+      <p>CoffeeLovers</p>
+    </div>
+    <div class="search_form">
+      <form class="form_data" method="GET" action="{% url 'index' %}"> 
+        <input class="search_input" type="text" name="q" placeholder="Search Coffeehouses..."/>
+      </form>  
+    </div>
+    <div class="search_glass"><a href="http://localhost:8000"><img src="{% static 'img/search.png' %}" width="103"></a> </div>
+  </div>    
+  
+</div>
+<div class="places"><img src="{% static 'img/address.png' %}"/></div>
+<div class="signup"><img src="{% static 'img/account.png' %}"/></div>

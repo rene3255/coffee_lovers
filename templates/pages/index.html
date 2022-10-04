@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+  {% include 'partials/_navbar.html' %}
+  <div class="main_message">
+    <div class="desc_main_message">
+      Cafeterías cerca
+    </div> 
+  </div>
+  <!-- 
+    Start render of coffee cards (first row)
+  -->
+  <div class="cards_row_one">
+    <div class="first_row_cards">
+      {% for coffee in coffees %}
+      <div>
+        <img class="image_card" src="{{ coffee.coffee_image.url }}">
+      </div>
+      {% endfor %}
+    </div>  
+  </div> 
+
+  <!-- 
+    End render of coffee cards (first row)
+  -->
+  <!--
+    Begin render of coffee cards descriptions
+  -->
+    <div class="desc_row_one">
+      <div class="first_row_cards_description">
+        {% for coffee in coffees %}
+        <div class="description_one">
+          <div>
+            {{coffee.id}}
+            {{ coffee.name }}
+          </div>
+          <div>
+            <a class="nav-link" href="{% url 'coffeehouse:details' coffee.id %}"><img class="image_propeties" src="{% static 'img/Star.png' %}" width="31.72" height="31.13"></a>
+          </div>
+          <div>
+            Ciudad de {{ coffee.city }}
+          </div>   
+        </div>
+        {% endfor %}
+      </div>
+    </div>  
+  -->  
+  <div class="cards_row_two">cards row two</div>
+  <div class="desc_row_two">desc row two</div>
+  <div class="footer">Footer</div>
+</div>
+
+{% endblock %}
