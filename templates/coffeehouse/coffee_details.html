@@ -16,6 +16,7 @@
       <td>{{ detail.city }}</td>  
       <td>{{ detail.wifi }}</td>  
       <td>{{ detail.bike_friendly }}</td>  
+      <td><a class="nav-link" href="{% url 'favorites:favorite' detail.id detail.name %}">Agregar a favoritos</a></td>  
     </tr>
     {% endfor %}  
   </table>

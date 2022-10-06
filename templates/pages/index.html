@@ -15,7 +15,7 @@
     <div class="first_row_cards">
       {% for coffee in coffees %}
       <div>
-        <img class="image_card" src="{{ coffee.coffee_image.url }}">
+        <a class="nav-link" href="{% url 'coffeehouse:details' coffee.id %}"><img class="image_card" src="{{ coffee.coffee_image.url }}"></a>
       </div>
       {% endfor %}
     </div>  
